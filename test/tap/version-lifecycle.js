@@ -152,6 +152,7 @@ function makeScript (lifecycle) {
             exec(
               'git status --porcelain',
               function (err, stdout) {
+                if (err) throw err
                 fs.writeFileSync(lifecycle + '-git.txt', stdout)
               }
             )

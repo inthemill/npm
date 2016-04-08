@@ -5,9 +5,7 @@ var mkdirp = require('mkdirp')
 var rimraf = require('rimraf')
 var test = require('tap').test
 var requireInject = require('require-inject')
-/*eslint no-unused-vars:0*/
-var common = require('../common-tap.js')
-/*eslint no-unused-vars:1*/
+require('../common-tap.js')
 
 var base = path.join(__dirname, path.basename(__filename, '.js'))
 

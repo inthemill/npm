@@ -88,7 +88,7 @@ test('use first npm to install second npm', function (t) {
           '-g',
           '--prefix=' + folder + '/second',
           '--cache=' + folder + '/cache',
-          '--tmp=' + folder + '/tmp',
+          '--tmp=' + folder + '/tmp'
         ],
         {stdio: 'inherit'}
       )

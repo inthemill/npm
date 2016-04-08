@@ -5,7 +5,6 @@ var requireInject = require('require-inject')
 var dezalgo = require('dezalgo')
 var mkdirp = require('mkdirp')
 
-
 test('gently/force', function (t) {
   t.plan(5)
 
@@ -22,7 +21,7 @@ test('gently/force', function (t) {
     mkdir: {'/foo/bar': true},
     stat: {'/foo/bar/baz/wibble': true},
     symlink: {'/foo/bar/baz/wibble': {'/foo/bar/baz': 'junction'}},
-    readlink: {},
+    readlink: {}
   })
 
   linkNotOk(t, 'gently=true, force=false, does not work', {
@@ -38,7 +37,7 @@ test('gently/force', function (t) {
     mkdir: {'/foo/bar': true},
     stat: {'/foo/bar/baz/wibble': true},
     symlink: {'/foo/bar/baz/wibble': {'/foo/bar/baz': 'junction'}},
-    readlink: {},
+    readlink: {}
   })
 
   linkOk(t, 'gently=false, force=false, aok', {
@@ -54,7 +53,7 @@ test('gently/force', function (t) {
     mkdir: {'/foo/bar': true},
     stat: {'/foo/bar/baz/wibble': true},
     symlink: {'/foo/bar/baz/wibble': {'/foo/bar/baz': 'junction'}},
-    readlink: {},
+    readlink: {}
   })
 
   linkOk(t, 'gently=true, force=true, aok', {
@@ -70,7 +69,7 @@ test('gently/force', function (t) {
     mkdir: {'/foo/bar': true},
     stat: {'/foo/bar/baz/wibble': true},
     symlink: {'/foo/bar/baz/wibble': {'/foo/bar/baz': 'junction'}},
-    readlink: {},
+    readlink: {}
   })
 
   linkOk(t, 'gently=false, force=true, aok', {
@@ -86,7 +85,7 @@ test('gently/force', function (t) {
     mkdir: {'/foo/bar': true},
     stat: {'/foo/bar/baz/wibble': true},
     symlink: {'/foo/bar/baz/wibble': {'/foo/bar/baz': 'junction'}},
-    readlink: {},
+    readlink: {}
   })
 })
 
@@ -106,7 +105,7 @@ test('abs, noabs', function (t) {
     mkdir: {'/foo/bar': true},
     stat: {'/foo/bar/baz/wibble': true},
     symlink: {'/foo/bar/baz/wibble': {'/foo/bar/baz': 'junction'}},
-    readlink: {},
+    readlink: {}
   })
 
   linkOk(t, 'relative', {
@@ -122,7 +121,7 @@ test('abs, noabs', function (t) {
     mkdir: {'/foo/bar': true},
     stat: {'/foo/bar/baz/wibble': true},
     symlink: {'wibble': {'/foo/bar/baz': 'junction'}},
-    readlink: {},
+    readlink: {}
   })
 
   linkOk(t, 'relative ..', {
@@ -138,7 +137,7 @@ test('abs, noabs', function (t) {
     mkdir: {'/foo/bar': true},
     stat: {'/foo/bar/wibble/bark/blump': true},
     symlink: {'../wibble/bark/blump': {'/foo/bar/baz': 'junction'}},
-    readlink: {},
+    readlink: {}
   })
 
   linkOk(t, 'relative .. deep', {
@@ -154,11 +153,11 @@ test('abs, noabs', function (t) {
     mkdir: {'/foo/bar': true},
     stat: {'/foo/bar/wibble/bark/blump': true},
     symlink: {'../wibble/bark/blump': {'/foo/bar/baz': 'junction'}},
-    readlink: {},
+    readlink: {}
   })
 })
 
-function linkOk(t, msg, opts) {
+function linkOk (t, msg, opts) {
   testLink(opts, function (err) {
     t.ifError(err, msg)
   })
